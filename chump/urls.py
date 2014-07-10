@@ -6,5 +6,5 @@ urlpatterns = []
 
 urlpatterns += patterns('',
     url(r'^$', 'chump.views.subscribe_process', name='chump_process'),
-    url(r'^(.+)/$', 'chump.views.subscribe_process', name='chump_process'),
+    url(r'^list/(.+)/$', 'chump.views.subscribe_process', name='chump_process'),
 )
