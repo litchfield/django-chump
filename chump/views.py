@@ -12,10 +12,10 @@ DONE_URL = getattr(settings, 'MAILCHIMP_DONE_URL', '/chump/done/')
 ERROR_URL = getattr(settings, 'MAILCHIMP_ERROR_URL', '/chump/error/')
 
 def subscribe_done(request):
-    return render(request, get_template_names('subscribe_done.html'), {})
+    return render(request, get_template_names('chump_done.html'), {})
 
 def subscribe_error(request):
-    return render(request, get_template_names('subscribe_error.html'), {})
+    return render(request, get_template_names('chump_error.html'), {})
 
 def subscribe_process(request, list_id=None):
     list_id = list_id or getattr(settings, 'MAILCHIMP_LIST_ID', None)
