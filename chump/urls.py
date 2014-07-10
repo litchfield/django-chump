@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.conf.urls import *
 from django.views.generic import TemplateView
+from chump import get_template_names
 
 urlpatterns = []
 
