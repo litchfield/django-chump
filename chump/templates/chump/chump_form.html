@@ -1,0 +1,9 @@
+{# example form #}
+<form action="{% url "chump_process" %}" class="chump-form" method="POST">
+	{% csrf_token %}
+  <fieldset>
+    {{ chump_form.name }}
+    {{ chump_form.email }}
+    <button type="submit" class="btn">Subscribe</button>
+  </fieldset>
+</form>
