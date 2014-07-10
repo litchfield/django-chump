@@ -20,10 +20,10 @@ def subscribe_process(request, list_id=None):
             try:
                 lst = utils.get_connection().get_list_by_id(list_id)
                 opt = {
-                    'EMAIL': d['email'],
-                    'NAME': d['name'],
+                    'EMAIL': form.cleaned_data['email'],
+                    'NAME': form.cleaned_data['name'],
                 }
-                lst.subscribe(d['email'], opt)
+                lst.subscribe(form.cleaned_data['email'], opt)
                 # It worked!
                 if request.is_ajax():
                     # For ajax, return target URL as plain text
