@@ -1,3 +1,5 @@
+# Lets place nice and not make any assumptions on style
+
 PREFIXES = [
 	'chump/',
 	'includes/',

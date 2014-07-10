@@ -1,13 +1,21 @@
 from mailchimp import utils
 from urllib2 import URLError
+from django.shortcuts import render
 from django.conf import settings
 from django.contrib import messages
 from django.http import HttpResponse, HttpResponseRedirect
 from mailchimp.chimpy.chimpy import ChimpyException
+from chump import get_template_names
 from forms import ChumpSubscribeForm
 
 DONE_URL = getattr(settings, 'MAILCHIMP_DONE_URL', '/chump/done/')
 ERROR_URL = getattr(settings, 'MAILCHIMP_ERROR_URL', '/chump/error/')
+
+def subscribe_done(request):
+    return render(request, get_template_names('subscribe_done.html'), {})
+
+def subscribe_error(request):
+    return render(request, get_template_names('subscribe_error.html'), {})
 
 def subscribe_process(request, list_id=None):
     list_id = list_id or getattr(settings, 'MAILCHIMP_LIST_ID', None)
