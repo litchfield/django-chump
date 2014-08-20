@@ -36,8 +36,8 @@ def subscribe_process(request, list_id=None):
                 # It worked!
                 if request.is_ajax():
                     # For ajax, return target URL as plain text
-                    return HttpResponse(DONE_URL, content_type='text/plain')
-                return HttpResponseRedirect(DONE_URL)
+                    return HttpResponse(url, content_type='text/plain')
+                return HttpResponseRedirect(url)
             except URLError:
                 error_msg = 'Subscription temporarily unavailable'
             except ChimpyException, e:
