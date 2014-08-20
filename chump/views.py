@@ -32,6 +32,7 @@ def subscribe_process(request, list_id=None):
                     'NAME': form.cleaned_data['name'],
                 }
                 lst.subscribe(form.cleaned_data['email'], opt)
+                url = request.POST.get('next', DONE_URL)
                 # It worked!
                 if request.is_ajax():
                     # For ajax, return target URL as plain text
